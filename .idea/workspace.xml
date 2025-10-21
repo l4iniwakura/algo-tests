@@ -5,8 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9d0f0351-ffbc-49ea-97f7-ee3682af4a21" name="Changes" comment="Пара задачек с тестами">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/TargetFinder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/example/TargetFinderTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/BinarySearchUtilTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/BinarySearchUtilTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,6 +50,7 @@
     "JUnit.ConflictFinderTest.executor": "Run",
     "JUnit.MainTest.executor": "Run",
     "JUnit.MainTest.test.executor": "Run",
+    "JUnit.TargetFinderTest.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
@@ -75,7 +77,7 @@
       <recent name="org.example" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.BinarySearchUtilTest">
+  <component name="RunManager" selected="JUnit.BitMapperTest">
     <configuration name="BinarySearchUtilTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="algo-tests" />
       <extension name="coverage">
@@ -122,22 +124,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BitMapperTest.findThePrefixCommonArray_shouldWorkCorrectly" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="algo-tests" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.example.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.example" />
-      <option name="MAIN_CLASS_NAME" value="org.example.BitMapperTest" />
-      <option name="METHOD_NAME" value="findThePrefixCommonArray_shouldWorkCorrectly" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="ConflictFinderTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="algo-tests" />
       <extension name="coverage">
@@ -153,13 +139,28 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="TargetFinderTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="algo-tests" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.example" />
+      <option name="MAIN_CLASS_NAME" value="org.example.TargetFinderTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.BitMapperTest" />
+        <item itemvalue="JUnit.TargetFinderTest" />
         <item itemvalue="JUnit.BinarySearchUtilTest" />
         <item itemvalue="JUnit.ConflictFinderTest" />
-        <item itemvalue="JUnit.BitMapperTest" />
         <item itemvalue="JUnit.BitMapperTest.findThePrefixCommonArray_shouldWorkCorrectly (1)" />
-        <item itemvalue="JUnit.BitMapperTest.findThePrefixCommonArray_shouldWorkCorrectly" />
       </list>
     </recent_temporary>
   </component>
@@ -180,7 +181,15 @@
       <option name="project" value="LOCAL" />
       <updated>1761068913226</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Пара задачек с тестами">
+      <option name="closed" value="true" />
+      <created>1761069013529</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1761069013529</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
