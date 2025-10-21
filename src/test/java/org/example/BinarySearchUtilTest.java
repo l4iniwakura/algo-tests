@@ -41,6 +41,7 @@ class BinarySearchUtilTest {
         assertEquals(4, -index - 1);
     }
 
+    // fixe me please
     @Test
     @Timeout(value = 1)
     void binarySearchFirstOccurrence_shouldReturnCorrectIndexOfFirstOccurrence_whenFindingExistingTarget() {
@@ -50,18 +51,15 @@ class BinarySearchUtilTest {
         assertEquals(expected, actual);
     }
 
+    // fixe me please
     @Test
     @Timeout(value = 1)
     void binarySearchLastOccurrence_shouldReturnCorrectIndexOfLastOccurrence_whenFindingExistingTarget() {
-        var array = new int[]{1};
+        var array = new int[]{1,2,3,4,7,7,7,8,9,10};
         var expected = 6;
         var actual = BinarySearchUtil.binarySearchLastOccurrence(array, 2);
         assertEquals(expected, actual);
     }
 
-    @Test
-    void test() {
-        assertEquals(1 | 2, 3);
-        assertEquals(1 | 2 | 4, 7);
-    }
+
 }

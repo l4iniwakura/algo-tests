@@ -1,5 +1,6 @@
 package org.example;
 
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -7,6 +8,7 @@ import org.junit.jupiter.params.provider.MethodSource;
 import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class BitMapperTest {
 
@@ -22,6 +24,12 @@ class BitMapperTest {
     @MethodSource("testDataProvider")
     void anotherFrequencyCounter_shouldWorkCorrectly(int[] a, int[] b, int[] expected) {
         assertArrayEquals(expected, bitMapper.anotherFrequencyCounter(a, b));
+    }
+
+    @Test
+    void test() {
+        assertEquals(1 | 2, 3);
+        assertEquals(1 | 2 | 4, 7);
     }
 
     static Stream<Arguments> testDataProvider() {

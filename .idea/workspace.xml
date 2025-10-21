@@ -4,18 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9d0f0351-ffbc-49ea-97f7-ee3682af4a21" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/BinarySearchUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/BitMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/ConflictFinder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/example/BinarySearchUtilTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/example/BitMapperTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/example/ConflictFinderTest.java" afterDir="false" />
+    <list default="true" id="9d0f0351-ffbc-49ea-97f7-ee3682af4a21" name="Changes" comment="Пара задачек с тестами">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/BinarySearchUtilTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/BinarySearchUtilTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,8 +75,8 @@
       <recent name="org.example" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ConflictFinderTest">
-    <configuration name="BinarySearchUtilTest.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.BinarySearchUtilTest">
+    <configuration name="BinarySearchUtilTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="algo-tests" />
       <extension name="coverage">
         <pattern>
@@ -95,8 +86,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="org.example" />
       <option name="MAIN_CLASS_NAME" value="org.example.BinarySearchUtilTest" />
-      <option name="METHOD_NAME" value="test" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -165,11 +155,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.BinarySearchUtilTest" />
         <item itemvalue="JUnit.ConflictFinderTest" />
         <item itemvalue="JUnit.BitMapperTest" />
         <item itemvalue="JUnit.BitMapperTest.findThePrefixCommonArray_shouldWorkCorrectly (1)" />
         <item itemvalue="JUnit.BitMapperTest.findThePrefixCommonArray_shouldWorkCorrectly" />
-        <item itemvalue="JUnit.BinarySearchUtilTest.test" />
       </list>
     </recent_temporary>
   </component>
@@ -182,7 +172,20 @@
       <option name="presentableId" value="Default" />
       <updated>1747655133090</updated>
     </task>
+    <task id="LOCAL-00001" summary="Пара задачек с тестами">
+      <option name="closed" value="true" />
+      <created>1761068913226</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1761068913226</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Пара задачек с тестами" />
+    <option name="LAST_COMMIT_MESSAGE" value="Пара задачек с тестами" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
