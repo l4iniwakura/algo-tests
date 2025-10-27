@@ -1,4 +1,4 @@
-package org.example;
+package com.github.l4iniwakura.algo;
 
 public class BinarySearchUtil {
     public static void main(String[] args) {

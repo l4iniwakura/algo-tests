@@ -4,6 +4,9 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentLinkedDeque;
 import java.util.concurrent.locks.ReentrantLock;
 
+/*
+  Concurrent LRUCache, but has poor performance
+ */
 public class ConcurrentLRUCache<K, V> implements Cache<K, V> {
     private final int capacity;
     private final ConcurrentHashMap<K, V> cache;

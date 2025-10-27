@@ -1,5 +1,6 @@
-package org.example;
+package com.github;
 
+import com.github.l4iniwakura.algo.IntervalMerger;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;

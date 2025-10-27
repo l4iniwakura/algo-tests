@@ -1,4 +1,4 @@
-package org.example;
+package com.github.l4iniwakura.algo;
 
 import java.util.HashMap;
 import java.util.Map;

@@ -1,5 +1,6 @@
-package org.example;
+package com.github;
 
+import com.github.l4iniwakura.algo.BinarySearchUtil;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Timeout;
 import org.junit.jupiter.params.ParameterizedTest;

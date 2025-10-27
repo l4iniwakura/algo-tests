@@ -1,5 +1,6 @@
-package org.example;
+package com.github;
 
+import com.github.l4iniwakura.algo.MaxConsecutiveRepeats;
 import org.junit.jupiter.api.Test;
 
 import java.util.Map;

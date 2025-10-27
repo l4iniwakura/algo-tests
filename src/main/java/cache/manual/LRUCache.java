@@ -7,6 +7,11 @@ import java.util.NoSuchElementException;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicInteger;
 
+/*
+
+    Manually written LRUCache with manual deque management
+
+ */
 public class LRUCache<K, V> implements Iterable<Map.Entry<K, V>> {
 
     private final Node<K, V> head;
@@ -50,12 +55,6 @@ public class LRUCache<K, V> implements Iterable<Map.Entry<K, V>> {
         }
         addToHead(node);
         return defaultValue;
-    }
-
-    private Node<K, V> moveToHead(Node<K, V> node) {
-        deleteNode(node);
-        addToHead(node);
-        return node;
     }
 
     public V get(K key) {
@@ -126,6 +125,12 @@ public class LRUCache<K, V> implements Iterable<Map.Entry<K, V>> {
 
         modificationCount++;
 
+        return node;
+    }
+
+    private Node<K, V> moveToHead(Node<K, V> node) {
+        deleteNode(node);
+        addToHead(node);
         return node;
     }
 

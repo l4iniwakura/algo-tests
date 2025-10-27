@@ -4,6 +4,11 @@ import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
+/*
+  LinkedHashMap based LRUCache.
+  All operations O(1)
+  Not thread safe
+ */
 public class LRUCache<K, V> implements Cache<K, V> {
 
     private final int capacity;
