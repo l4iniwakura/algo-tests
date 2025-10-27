@@ -15,7 +15,8 @@ public class LRUCache<K, V> implements Iterable<Map.Entry<K, V>> {
     private final V defaultValue;
     private final Map<K, Node<K, V>> cache;
     private final AtomicInteger counter = new AtomicInteger(0);
-    private final AtomicInteger modificationCount = new AtomicInteger(0);
+
+    private int modificationCount = 0;
 
     public LRUCache(int capacity, V defaultValue) {
         if (capacity <= 0) {
@@ -73,7 +74,7 @@ public class LRUCache<K, V> implements Iterable<Map.Entry<K, V>> {
         }
         deleteNode(node);
         counter.decrementAndGet();
-        return node.getValue();
+        return node.value;
     }
 
     public int size() {
@@ -104,7 +105,7 @@ public class LRUCache<K, V> implements Iterable<Map.Entry<K, V>> {
         counter.set(0);
     }
 
-    private Node deleteNode(Node node) {
+    private Node<K, V> deleteNode(Node<K, V> node) {
         node.prev.next = node.next;
         node.next.prev = node.prev;
 
@@ -112,18 +113,18 @@ public class LRUCache<K, V> implements Iterable<Map.Entry<K, V>> {
         node.prev = null;
         node.next = null;
 
-        modificationCount.incrementAndGet();
+        modificationCount++;
 
         return node;
     }
 
-    private Node addToHead(Node node) {
+    private Node<K, V> addToHead(Node<K, V> node) {
         node.next = head.next;
         node.next.prev = node;
         node.prev = head;
         head.next = node;
 
-        modificationCount.incrementAndGet();
+        modificationCount++;
 
         return node;
     }
@@ -131,8 +132,8 @@ public class LRUCache<K, V> implements Iterable<Map.Entry<K, V>> {
     @Override
     public Iterator<Map.Entry<K, V>> iterator() {
         return new Iterator<>() {
-            private Node current = head.next;
-            private final int currentModificationCount = modificationCount.get();
+            private Node<K, V> current = head.next;
+            private final int currentModificationCount = modificationCount;
 
             @Override
             public boolean hasNext() {
@@ -144,10 +145,10 @@ public class LRUCache<K, V> implements Iterable<Map.Entry<K, V>> {
                 if (!hasNext()) {
                     throw new NoSuchElementException();
                 }
-                if (currentModificationCount != modificationCount.get()) {
+                if (currentModificationCount != modificationCount) {
                     throw new ConcurrentModificationException("Cache modified during iteration");
                 }
-                Map.Entry<K, V> entry = Map.entry((K) current.getKey(), (V) current.getValue());
+                Map.Entry<K, V> entry = Map.entry(current.key, current.value);
                 current = current.next;
                 return entry;
             }
@@ -181,18 +182,6 @@ public class LRUCache<K, V> implements Iterable<Map.Entry<K, V>> {
 
         public Node(K key, V value) {
             this.key = key;
-            this.value = value;
-        }
-
-        public K getKey() {
-            return key;
-        }
-
-        public V getValue() {
-            return value;
-        }
-
-        public void setValue(V value) {
             this.value = value;
         }
     }
