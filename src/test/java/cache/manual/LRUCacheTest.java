@@ -12,7 +12,7 @@ class LRUCacheTest {
 
     @Test
     void putShouldReturnInsertedValuesCorrectly() {
-        lruCache = new LRUCache(2, DEFAULT_VALUE);
+        lruCache = new LRUCache<>(2, DEFAULT_VALUE);
         lruCache.put(1, 1);
         lruCache.put(2, 2);
         assertEquals(2, lruCache.get(2));
@@ -38,6 +38,13 @@ class LRUCacheTest {
         lruCache.put(2, 2);
         assertEquals(2, lruCache.get(1));
         assertEquals(2, lruCache.get(2));
+    }
+
+    @Test
+    void putShouldReturnDefaultValueIfValueInsertedFirstTime() {
+        lruCache = new LRUCache<>(2, DEFAULT_VALUE);
+        var prev = lruCache.put(1,1);
+        assertEquals(DEFAULT_VALUE, prev);
     }
 
     @Test
