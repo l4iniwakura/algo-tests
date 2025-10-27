@@ -9,11 +9,11 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 public class LRUCache<K, V> implements Iterable<Map.Entry<K, V>> {
 
-    private final Node head;
-    private final Node tail;
+    private final Node<K, V> head;
+    private final Node<K, V> tail;
     private final int capacity;
     private final V defaultValue;
-    private final Map<K, Node> cache;
+    private final Map<K, Node<K, V>> cache;
     private final AtomicInteger counter = new AtomicInteger(0);
     private final AtomicInteger modificationCount = new AtomicInteger(0);
 
@@ -26,8 +26,8 @@ public class LRUCache<K, V> implements Iterable<Map.Entry<K, V>> {
         this.capacity = capacity;
         this.defaultValue = defaultValue;
 
-        head = new Node(null, defaultValue);
-        tail = new Node(null, defaultValue);
+        head = new Node<>(null, defaultValue);
+        tail = new Node<>(null, defaultValue);
         head.next = tail;
         tail.prev = head;
     }
@@ -40,7 +40,7 @@ public class LRUCache<K, V> implements Iterable<Map.Entry<K, V>> {
             moveToHead(node);
             return oldValue;
         }
-        node = new Node(key, value);
+        node = new Node<>(key, value);
         cache.put(key, node);
         if (counter.get() >= this.capacity) {
             remove(tail.prev.key);
@@ -51,8 +51,10 @@ public class LRUCache<K, V> implements Iterable<Map.Entry<K, V>> {
         return defaultValue;
     }
 
-    private Node moveToHead(Node node) {
-        return addToHead(deleteNode(node));
+    private Node<K, V> moveToHead(Node<K, V> node) {
+        deleteNode(node);
+        addToHead(node);
+        return node;
     }
 
     public V get(K key) {
@@ -65,13 +67,13 @@ public class LRUCache<K, V> implements Iterable<Map.Entry<K, V>> {
     }
 
     public V remove(K key) {
-        Node node = cache.remove(key);
+        var node = cache.remove(key);
         if (node == null) {
             return defaultValue;
         }
         deleteNode(node);
         counter.decrementAndGet();
-        return node.value;
+        return node.getValue();
     }
 
     public int size() {
@@ -130,7 +132,7 @@ public class LRUCache<K, V> implements Iterable<Map.Entry<K, V>> {
     public Iterator<Map.Entry<K, V>> iterator() {
         return new Iterator<>() {
             private Node current = head.next;
-            private int currentModificationCount = modificationCount.get();
+            private final int currentModificationCount = modificationCount.get();
 
             @Override
             public boolean hasNext() {
@@ -145,7 +147,7 @@ public class LRUCache<K, V> implements Iterable<Map.Entry<K, V>> {
                 if (currentModificationCount != modificationCount.get()) {
                     throw new ConcurrentModificationException("Cache modified during iteration");
                 }
-                Map.Entry<K, V> entry = Map.entry(current.key, current.value);
+                Map.Entry<K, V> entry = Map.entry((K) current.getKey(), (V) current.getValue());
                 current = current.next;
                 return entry;
             }
@@ -171,14 +173,26 @@ public class LRUCache<K, V> implements Iterable<Map.Entry<K, V>> {
         return sb.append(']').toString();
     }
 
-    private class Node {
-        Node prev;
-        Node next;
-        final K key;
-        V value;
+    private static class Node<K, V> {
+        Node<K, V> prev;
+        Node<K, V> next;
+        private final K key;
+        private V value;
 
         public Node(K key, V value) {
             this.key = key;
+            this.value = value;
+        }
+
+        public K getKey() {
+            return key;
+        }
+
+        public V getValue() {
+            return value;
+        }
+
+        public void setValue(V value) {
             this.value = value;
         }
     }
