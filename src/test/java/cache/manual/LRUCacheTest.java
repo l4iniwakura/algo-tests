@@ -1,5 +1,6 @@
 package cache.manual;
 
+import com.github.l4iniwakura.cache.manual.LRUCache;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;

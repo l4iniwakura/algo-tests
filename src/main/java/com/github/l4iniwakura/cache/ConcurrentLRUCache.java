@@ -1,4 +1,4 @@
-package cache;
+package com.github.l4iniwakura.cache;
 
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentLinkedDeque;
@@ -60,7 +60,7 @@ public class ConcurrentLRUCache<K, V> implements Cache<K, V> {
     }
 
     @Override
-    public V remove(K key) {
+    public V remove(Object key) {
         lock.lock();
         try {
             return cache.remove(key);

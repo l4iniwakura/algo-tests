@@ -1,4 +1,4 @@
-package cache.manual;
+package com.github.l4iniwakura.cache.manual;
 
 public class DoublyLinkedList<V> {
     private final Node head;
